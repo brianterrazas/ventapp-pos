@@ -39,11 +39,72 @@ Version en fase alfa...cargando mejoras...proximamente lo lanzamos para el públ
 ![Productos Screenshot](http://imgfz.com/i/ryzWHib.png)
 
 ---
+```bash
+tpv_app/
+├── app.py                        # Punto de entrada principal (arranca la app Flet)
+├── config/
+│   ├── __init__.py
+│   ├── settings.py               # Configuraciones globales (idioma, base de datos, entorno)
+│   └── constants.py              # Constantes reutilizables (estilos, colores, rutas)
+├── core/
+│   ├── __init__.py
+│   ├── database.py               # Inicialización SQLite u otro motor
+│   ├── exceptions.py             # Manejo de errores personalizados
+│   └── utils.py                  # Funciones reutilizables (formato moneda, validaciones)
+├── domain/
+│   ├── __init__.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── producto.py           # DTO Producto
+│   │   ├── categoria.py
+│   │   ├── cliente.py
+│   │   └── venta.py
+│   ├── repositories/
+│   │   ├── __init__.py
+│   │   ├── producto_repo.py
+│   │   ├── categoria_repo.py
+│   │   └── venta_repo.py
+│   └── services/
+│       ├── __init__.py
+│       ├── venta_service.py      # Lógica como registrar venta, totalizar, aplicar descuentos
+│       └── stock_service.py
+├── ui/
+│   ├── __init__.py
+│   ├── main_view.py              # Ventana principal con menú lateral y navegación
+│   ├── views/
+│   │   ├── __init__.py
+│   │   ├── producto_view.py
+│   │   ├── cliente_view.py
+│   │   ├── venta_view.py
+│   │   ├── dashboard_view.py
+│   │   └── ajustes_view.py
+│   └── components/
+│       ├── __init__.py
+│       ├── botones.py            # Botones reutilizables
+│       ├── tablas.py             # Tablas reutilizables con estilos
+│       └── formularios.py
+├── localization/
+│   ├── es.py                     # Traducciones en español
+│   ├── en.py                     # Traducciones en inglés
+│   └── i18n.py                   # Manejador de idiomas
+├── assets/
+│   ├── images/                   # Logos, íconos
+│   ├── fonts/                    # Tipografías personalizadas
+│   └── themes/                   # Archivos JSON o Python con estilos de UI
+├── tests/
+│   ├── __init__.py
+│   ├── test_productos.py
+│   ├── test_ventas.py
+│   └── test_integration.py
+├── requirements.txt              # Dependencias del proyecto
+└── README.md                     # Documentación principal
+```
+---
 
 ### 🚀 Instalación rápida
 
 ```bash
-git clone https://github.com/jpriscilaa/proyecto_tienda_POS.git
+git clone https://github.com/brianterrazas/ventapp-pos.git
 cd proyecto_tienda_POS
 pip install -r requirements.txt
 python main.py

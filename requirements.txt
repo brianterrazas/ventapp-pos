@@ -1,0 +1,4 @@
+flet>=0.28.3
+pyinstaller>=6.13.0
+fpdf2>=1.7.2
+screeninfo>=0.8.1
